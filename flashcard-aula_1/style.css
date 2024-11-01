@@ -1,7 +1,7 @@
 :root{
 --texto-principal: rgb(6, 200, 214);
---texto-pergunta: gray;
---texto-resposta: gray;
+--texto-pergunta: rgb(6, 117, 151);
+--texto-resposta: rgb(5, 96, 124);
 }
 
 body {
@@ -26,6 +26,8 @@ body {
     text-align: center;
     border: 1px solid var(--texto-principal);
     height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 300ms ease-in-out;
 }
 
 .cartao__conteudo h3{
@@ -39,6 +41,18 @@ body {
     font-size: 1vw;
 }
 
+.cartao__conteudo__pergunta{
+    color: var(--texto-pergunta);
+    font-size: 22px;
+    font-weight: 600;
+    margin-left: 2em;
+}
+.cartao__conteudo__resposta{
+    color: var(--texto-resposta);
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 2em;
+}
 footer {
     background-color: black;
     color: white;
@@ -52,4 +66,8 @@ footer p {
     text-align: center;
     font-size: 0.6rem;
     margin-top: 0.5rem;
+}
+
+.cartao:hover .cartao__conteudo{
+    transform: rotateY(180deg);
 }
